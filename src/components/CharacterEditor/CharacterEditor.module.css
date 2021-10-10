@@ -3,11 +3,21 @@
   padding-bottom: 64px;
 }
 
+.characterEditor::before {
+  position: fixed;
+  content: '';
+  bottom: 0;
+  height: 40%;
+  width: 100%;
+  background-color: hsl(195deg, 20%, 86%);
+}
+
 .maxWidthWrapper {
 }
 
 .header {
   padding-bottom: 64px;
+  max-width: 65%;
 }
 
 .title {
@@ -24,7 +34,48 @@
 }
 
 .characterWrapper {
+  position: fixed;
+  display: block;
+  top: 15%;
+  left: 60%;
+  min-height: 500px;
+  max-width: 512px;
+  width: 100%;
 }
 
 .controlColumn {
+  position: relative;
+  max-width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  .maxWidthWrapper {
+    overflow: hidden;
+  }
+
+  .controlColumn {
+    position: fixed;
+    bottom: 10%;
+    display: flex;
+    white-space: nowrap;
+    overflow-x: auto;
+    max-width: 100%;
+    z-index: 1;
+  }
+
+  .controlColumn > * {
+    margin-right: 12px;
+    max-width: 90%;
+  }
+
+  .header {
+    max-width: unset;
+  }
+
+  .characterWrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+    inset: 0;
+  }
 }
